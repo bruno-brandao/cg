@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Content } from 'ionic-angular';
 import * as PIXI from 'pixi.js';
 
-import * as Stats from 'Stats.js'; //optionnal : it's for display framerate
+//import * as Stats from 'Stats.js'; //optionnal : it's for display framerate
 
 @Component({
   selector: 'page-home',
@@ -20,9 +20,7 @@ export class HomePage {
   }
 
   ngOnInit() {
-      PIXI.autoDetectRenderer(800, 600, {backgroundColor: 0x1099bb});
-  
-        var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x1099bb});
+        var renderer = PIXI.autoDetectRenderer(360, 560,{backgroundColor : 0x1099bb});
         
         this.content.getNativeElement().appendChild(renderer.view);
         
@@ -61,17 +59,17 @@ export class HomePage {
         // stage.addChild(me);
         
         // init stats
-        let stats = new Stats();
-        stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-        this.content.getNativeElement().appendChild(stats.dom);
+        //let stats = new Stats();
+        //stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+        //this.content.getNativeElement().appendChild(stats.dom);
         
-        let page = this;
+        //let page = this;
         // start animating
         animate();
         
         function animate() {
         
-            stats.begin();
+            //stats.begin();
             requestAnimationFrame(animate);
         
             // just for fun, let's rotate mr rabbit a little
@@ -81,7 +79,7 @@ export class HomePage {
         
             // render the container
             renderer.render(stage);
-            stats.end();
+           // stats.end();
         }
     }
 }
