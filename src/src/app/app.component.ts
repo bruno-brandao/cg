@@ -3,8 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +10,23 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: string = 'RetasPage';
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Retas', component: 'RetasPage' },
+      { title: 'Anti-Aliasing', component: 'AntiAliasingPage' },
+      { title: 'Tranlação', component: 'TranslacaoPage' },
+      { title: 'Rotação', component: 'RotacaoPage' },
+      { title: 'Escalonamento', component: 'EscalonamentoPage' },
+      { title: 'Cisalhamento', component: 'CisalhamentoPage' },
+      { title: 'Poligono Único', component: 'PoligonoPage' },
+      { title: 'Poligono Ambíguo', component: 'PoligonoAmbiguoPage' }
     ];
 
   }
