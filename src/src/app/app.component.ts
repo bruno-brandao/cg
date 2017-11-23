@@ -21,7 +21,7 @@ export class MyApp {
     this.pages = [
       { title: 'Retas', component: 'RetasPage' },
       { title: 'Anti-Aliasing', component: 'AntiAliasingPage' },
-      { title: 'Tranlação', component: 'TranslacaoPage' },
+      { title: 'Translação', component: 'TranslacaoPage' },
       { title: 'Rotação', component: 'RotacaoPage' },
       { title: 'Escalonamento', component: 'EscalonamentoPage' },
       { title: 'Cisalhamento', component: 'CisalhamentoPage' },

@@ -10,7 +10,10 @@ import * as PIXI from 'pixi.js';
 export class EscalonamentoPage {
     @ViewChild(Content) content: Content;
 
-    canvas: any;
+    app: any;
+    stage: PIXI.Container;
+    graphics: PIXI.Graphics;
+    position: boolean;
 
     constructor(public navCtrl: NavController) {
     }
@@ -20,66 +23,41 @@ export class EscalonamentoPage {
     }
 
     ngOnInit() {
-        var app = PIXI.autoDetectRenderer(this.content.getContentDimensions().contentWidth, this.content.getContentDimensions().scrollHeight, { backgroundColor: 0xffffff, antialias: true });
+        this.app = PIXI.autoDetectRenderer(this.content.getContentDimensions().contentWidth, this.content.getContentDimensions().scrollHeight, { backgroundColor: 0xffffff, antialias: true });
 
-        this.content.getNativeElement().appendChild(app.view);
+        this.content.getNativeElement().appendChild(this.app.view);
+        this.stage = new PIXI.Container();
 
-        //this.canvas.nativeElement.appendChild(renderer.view);
+        this.graphics = new PIXI.Graphics();
+        this.graphics.lineStyle(0);
+        this.graphics.beginFill(0xf27281, 0.5);
+        this.graphics.drawCircle(100, 510, 60);
+        this.graphics.endFill();
+        this.stage.addChild(this.graphics);
+        this.app.render(this.stage);
+        this.position = true;
+    }
 
-        //console.log(renderer.view);
-
-        // create the root of the scene graph
-        var stage = new PIXI.Container();
-
-        // create a texture from an image path
-        // var texture = PIXI.Texture.fromImage('assets/basics/bunny.png');
-
-        // create a new Sprite using the texture
-
-        let bunnies = [];
-        // for (var j = 0; j < 5; j++) {
-
-        for (var i = 0; i < 1; i++) {
-            var bunny = PIXI.Sprite.fromImage('assets/imgs/bunny.jpg');
-            bunny.anchor.x = 0.5;
-            bunny.anchor.y = 0.5;
-
-            bunny.x = 40 * i + 170;
-            bunny.y = 40 * i + 250;
-            stage.addChild(bunny);
-            bunnies.push(bunny);
-        };
-        //};
-
-        // var me = PIXI.Sprite.fromImage('assets/imgs/bunny.jpg');
-        // me.anchor.x = 0.5;
-        // me.anchor.y = 0.5;
-        // me.x = 20;
-        // me.y = 20;
-        // stage.addChild(me);
-
-        // init stats
-        //let stats = new Stats();
-        //stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-        //this.content.getNativeElement().appendChild(stats.dom);
-
-        //let page = this;
-        // start animating
-        animate();
-
-        function animate() {
-
-            //stats.begin();
-            requestAnimationFrame(animate);
-
-            // just for fun, let's rotate mr rabbit a little
-            for (let bunny of bunnies) {
-                bunny.rotation += 0.1;
-            }
-
-            // render the container
-            app.render(stage);
-            // stats.end();
+    animate() {
+        this.stage.removeChild(this.graphics);
+        if (this.position) {
+            this.graphics = new PIXI.Graphics();
+            this.graphics.lineStyle(0);
+            this.graphics.beginFill(0xf27281, 0.5);
+            this.graphics.drawCircle(180, 420, 100);
+            this.graphics.endFill();
+            this.stage.addChild(this.graphics);
+            this.app.render(this.stage);
+            this.position = false;
+        } else {
+            this.position = true;
+            this.graphics = new PIXI.Graphics();
+            this.graphics.lineStyle(0);
+            this.graphics.beginFill(0xf27281, 0.5);
+            this.graphics.drawCircle(100, 510, 60);
+            this.graphics.endFill();
+            this.stage.addChild(this.graphics);
+            this.app.render(this.stage);
         }
     }
 

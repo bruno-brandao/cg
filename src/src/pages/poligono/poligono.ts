@@ -28,7 +28,7 @@ export class PoligonoPage {
         
         // set a fill and line style
         graphics.beginFill(0xFF3300);
-        graphics.lineStyle(4, 0xffd900, 1);
+        graphics.lineStyle(4, 0xFF3300, 1);
         
         // draw a shape
         graphics.moveTo(50,80);
@@ -39,12 +39,12 @@ export class PoligonoPage {
         
         // set a fill and a line style again and draw a rectangle
         graphics.lineStyle(2, 0x0000FF, 1);
-        graphics.beginFill(0xFF700B, 1);
+        graphics.beginFill(0x0000FF, 1);
         graphics.drawRect(50, 250, 120, 120);
         
         // draw a rounded rectangle
         graphics.lineStyle(2, 0xFF00FF, 1);
-        graphics.beginFill(0xFF00BB, 0.25);
+        graphics.beginFill(0xFF00FF, 1);
         graphics.drawRoundedRect(10, 450, 300, 100, 15);
         graphics.endFill();
         
