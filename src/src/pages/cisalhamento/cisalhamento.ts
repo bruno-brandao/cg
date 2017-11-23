@@ -55,10 +55,12 @@ export class CisalhamentoPage {
             // draw a shape
             this.graphics.moveTo(100, 80);
             this.graphics.lineTo(300, 80);
-            this.graphics.lineTo(300, 200);
+            this.graphics.lineTo(250, 200);
             this.graphics.lineTo(50, 200);
             this.graphics.lineTo(100, 80);
             this.graphics.endFill();
+            this.stage.addChild(this.graphics);
+            this.app.render(this.stage);
             this.position = false;
         } else {
             this.position = true;
@@ -75,6 +77,8 @@ export class CisalhamentoPage {
             this.graphics.lineTo(50, 200);
             this.graphics.lineTo(50, 80);
             this.graphics.endFill();
+            this.stage.addChild(this.graphics);
+            this.app.render(this.stage);
         }
     }
 

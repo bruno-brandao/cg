@@ -22,10 +22,14 @@ export class RetasPage {
 
         this.content.getNativeElement().appendChild(app.view);
         var graphics = new PIXI.Graphics();
-
+        
         graphics.lineStyle(10, 0xf27281);
         graphics.moveTo(10, 100);
-        graphics.lineTo(300, 200);
+        for(var i = 0; i< 100; i++){
+            setTimeout(function(){ 
+                graphics.lineTo(i, i);
+            }, 500);
+        }
 
         graphics.lineStyle(10, 0x345d7e);
         graphics.moveTo(10, 200);
@@ -43,7 +47,6 @@ export class RetasPage {
         function animate() {
             // render the container
             app.render(stage);
-            // stats.end();
         }
 
         function DDA(x1, y1, x2, y2) {
