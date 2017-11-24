@@ -30,14 +30,48 @@ export class RetasPage {
         this.content.getNativeElement().appendChild(this.app.view);
         this.graphics = new PIXI.Graphics();
         this.stage = new PIXI.Container();
+        
+        var style = new PIXI.TextStyle({
+            fontFamily: 'Consolas',
+            fontSize: 100,
+            fill: ['#345d7e'], // gradient
+            wordWrap: true,
+            wordWrapWidth: 440
+        });
+        
+        var basicText = new PIXI.Text('l', style);
+        basicText.x = 155;
+        basicText.y = 95;
+        
+        this.stage.addChild(basicText);
+        
+        var basicText2 = new PIXI.Text('a', style);
+        basicText2.x = 155;
+        basicText2.y = 320;
+        
+        this.stage.addChild(basicText2);
+        
+        var basicText3 = new PIXI.Text('o', style);
+        basicText3.x = 30;
+        basicText3.y = 200;
+        
+        this.stage.addChild(basicText3);
+
+        
+        var basicText4 = new PIXI.Text('o', style);
+        basicText4.x = 275;
+        basicText4.y = 200;
+        
+        this.stage.addChild(basicText4);
+
 
         this.primeiraReta();
     }
 
     primeiraReta(){
-        this.x1 = 35;
+        this.x1 = 30;
         this.y1 = 100;
-        this.x2 = 35;
+        this.x2 = 30;
         this.y2 = 100;
         for (var i = 0; i < 25; i++) {
             this.x2 += i;
@@ -47,9 +81,9 @@ export class RetasPage {
     }
     
     segundaReta(){
-        this.x1 = 335;
+        this.x1 = 330;
         this.y1 = 100;
-        this.x2 = 335;
+        this.x2 = 330;
         this.y2 = 100;
         for (var i = 0; i < 25; i++) {
             this.x2 -= i;
@@ -59,9 +93,9 @@ export class RetasPage {
     }
     
     terceiraReta(){
-        this.x1 = 35;
+        this.x1 = 30;
         this.y1 = 480;
-        this.x2 = 35;
+        this.x2 = 30;
         this.y2 = 480;
         for (var i = 0; i < 25; i++) {
             this.x2 += i;
@@ -78,6 +112,7 @@ export class RetasPage {
             this.app.render(this.stage);
             this.x1 = x;
             this.y1 = y;
+            console.log(x, y, i);
             if(i == 24 && this.executa == 0){
                 this.executa++;
                 this.segundaReta();

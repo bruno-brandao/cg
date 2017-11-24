@@ -25,50 +25,54 @@ export class PoligonoAmbiguoPage {
         this.content.getNativeElement().appendChild(app.view);
         
         var graphics = new PIXI.Graphics();
+
+        var largura = this.content.getContentDimensions().contentWidth;
+        var altura = this.content.getContentDimensions().scrollHeight;
+        var alturaInicial = 26 * (altura / 100 );
         
         // set a fill and line style
-        graphics.beginFill(0xf27281);
-        graphics.lineStyle(4, 0x345d7e, 1);
+        graphics.beginFill(0xe0a353);
+        graphics.lineStyle(4, 0x8c9159, 1);
         
         // draw a shape
-        graphics.moveTo(20,80);
-        graphics.lineTo(220, 70);
-        graphics.lineTo(200, 200);
-        graphics.lineTo(20, 80);
+        graphics.moveTo( largura / 2, alturaInicial );
+        graphics.lineTo( 38.75 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
+        graphics.lineTo( 61.25 * (largura / 100), alturaInicial + ( 26 * largura / 100 ));
+        graphics.lineTo( largura / 2, alturaInicial);
         graphics.endFill();
 
-        graphics.beginFill(0xf8b195);
-        graphics.lineStyle(4, 0x345d7e, 1);
+        graphics.beginFill(0x484a35);
+        graphics.moveTo( 8.75 * (largura / 100), alturaInicial +  26 * (largura / 100 ) );
+        graphics.lineTo( 38.75 * (largura / 100), alturaInicial +  26 * (largura / 100 ) );
+        graphics.lineTo( 29.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
+        graphics.lineTo( 8.75 * (largura / 100), alturaInicial +  26 * (largura / 100 ) );
+        graphics.endFill();
         
-        // draw a shape
-        graphics.moveTo(350,80);
-        graphics.lineTo(220, 70);
-        graphics.lineTo(200, 200);
-        graphics.lineTo(350, 80);
+        graphics.beginFill(0xa52e28);
+        graphics.moveTo( 29.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
+        graphics.lineTo( 17.5 * (largura / 100), alturaInicial + ( 77.5 * largura / 100 ) );
+        graphics.lineTo( 50 * (largura / 100), alturaInicial + ( 62.5 * largura / 100 ) );
+        graphics.lineTo( 29.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
         graphics.endFill();
 
-        // set a fill and line style
-        graphics.beginFill(0xf27281);
-        graphics.lineStyle(4, 0x345d7e, 1);
         
-        // draw a shape
-        graphics.moveTo(20,200);
-        graphics.lineTo(220, 70);
-        graphics.lineTo(200, 200);
-        graphics.lineTo(20, 200);
+        graphics.beginFill(0x532321);
+        graphics.moveTo( 61.25 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
+        graphics.lineTo( 92.5 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
+        graphics.lineTo( 70.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
+        graphics.lineTo( 61.25 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
         graphics.endFill();
         
+        graphics.beginFill(0xd96017);
+        graphics.moveTo( 70.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
+        graphics.lineTo( 82.5 * (largura / 100), alturaInicial + ( 77.5 * largura / 100 ) );
+        graphics.lineTo( 50 * (largura / 100), alturaInicial + ( 62.5 * largura / 100 ) );
+        graphics.lineTo( 70.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
+        graphics.endFill();
+
         var stage = new PIXI.Container();
         stage.addChild(graphics);
-
-        animate();
-        
-        function animate() {
-
-            // render the container
-            app.render(stage);
-            // stats.end();
-        }
+        app.render(stage);
     }
 
 
