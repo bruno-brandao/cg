@@ -32,7 +32,6 @@ export class RetasPage {
         this.stage = new PIXI.Container();
         
         var style = new PIXI.TextStyle({
-            fontFamily: 'Consolas',
             fontSize: 100,
             fill: ['#345d7e'], // gradient
             wordWrap: true,
@@ -40,7 +39,7 @@ export class RetasPage {
         });
         
         var basicText = new PIXI.Text('l', style);
-        basicText.x = 155;
+        basicText.x = 165;
         basicText.y = 95;
         
         this.stage.addChild(basicText);
