@@ -1,4 +1,4 @@
-# Aplicativo de Computação Gráfica
+# Aplicativo de Computação Gráfica - Xaolo
 Objetivo
 
 Colocar em prática computação gráfica e criar um programa que possa simular a criação de retas, aplicação de anti-aliasing, preenchimento de polígonos, além das operações de translação, rotação, cisalhamento e escalonamento.
