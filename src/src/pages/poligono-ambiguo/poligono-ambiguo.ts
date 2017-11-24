@@ -31,8 +31,8 @@ export class PoligonoAmbiguoPage {
         var alturaInicial = 26 * (altura / 100 );
         
         // set a fill and line style
-        graphics.beginFill(0xe0a353);
-        graphics.lineStyle(4, 0x8c9159, 1);
+        graphics.lineStyle(4, 0xf27281, 1);
+        graphics.beginFill(0x345d7e);
         
         // draw a shape
         graphics.moveTo( largura / 2, alturaInicial );
@@ -41,14 +41,14 @@ export class PoligonoAmbiguoPage {
         graphics.lineTo( largura / 2, alturaInicial);
         graphics.endFill();
 
-        graphics.beginFill(0x484a35);
+        graphics.beginFill(0x345d7e);
         graphics.moveTo( 8.75 * (largura / 100), alturaInicial +  26 * (largura / 100 ) );
         graphics.lineTo( 38.75 * (largura / 100), alturaInicial +  26 * (largura / 100 ) );
         graphics.lineTo( 29.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
         graphics.lineTo( 8.75 * (largura / 100), alturaInicial +  26 * (largura / 100 ) );
         graphics.endFill();
         
-        graphics.beginFill(0xa52e28);
+        graphics.beginFill(0x345d7e);
         graphics.moveTo( 29.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
         graphics.lineTo( 17.5 * (largura / 100), alturaInicial + ( 77.5 * largura / 100 ) );
         graphics.lineTo( 50 * (largura / 100), alturaInicial + ( 62.5 * largura / 100 ) );
@@ -56,14 +56,14 @@ export class PoligonoAmbiguoPage {
         graphics.endFill();
 
         
-        graphics.beginFill(0x532321);
+        graphics.beginFill(0x345d7e);
         graphics.moveTo( 61.25 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
         graphics.lineTo( 92.5 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
         graphics.lineTo( 70.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
         graphics.lineTo( 61.25 * (largura / 100), alturaInicial + ( 26 * largura / 100 ) );
         graphics.endFill();
         
-        graphics.beginFill(0xd96017);
+        graphics.beginFill(0x345d7e);
         graphics.moveTo( 70.5 * (largura / 100), alturaInicial +  48 * (largura / 100 ) );
         graphics.lineTo( 82.5 * (largura / 100), alturaInicial + ( 77.5 * largura / 100 ) );
         graphics.lineTo( 50 * (largura / 100), alturaInicial + ( 62.5 * largura / 100 ) );

@@ -112,7 +112,6 @@ export class RetasPage {
             this.app.render(this.stage);
             this.x1 = x;
             this.y1 = y;
-            console.log(x, y, i);
             if(i == 24 && this.executa == 0){
                 this.executa++;
                 this.segundaReta();
